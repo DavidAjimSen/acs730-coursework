@@ -14,4 +14,4 @@ it has created the security group
 
 4 the last script deletes the security group
 
-hence why we only ran the frist two scripts and not the last 2 (yet)
+hence why we only ran the first two scripts and the last 2 after
