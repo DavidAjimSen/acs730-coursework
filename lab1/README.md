@@ -15,3 +15,5 @@ it has created the security group
 4 the last script deletes the security group
 
 hence why we only ran the first two scripts and the last 2 after
+
+Edit of Lab1 read me for pull merge
