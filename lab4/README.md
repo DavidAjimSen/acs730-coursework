@@ -52,3 +52,4 @@ the install has to reinstall everything again, hence the significantly longer ti
 
 .dockerignore lists the files Docker should not send to the build. The bullet names the files that 
 are to be skipped.
+
