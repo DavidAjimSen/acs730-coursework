@@ -67,3 +67,13 @@ of measure is saved. The 5 second baseline as well is negligable because there i
 Docker layer cache: Not worth either. The plain took 7 seconds while the hit was 11 seconds 
 and 10 seconds for the buildx, therefore the cache import and export overhead are outweighed by 
 the small pip layer it reuses
+
+
+Python Deps
+is a composite action** because it is two steps 
+(`setup-python` with the pip cache, then `pip install`) 
+that must run inside the test job's own runner in the same checkout and filesystem as pytest
+and an action runs as steps within the caller's job.
+
+The image build and publish is a reusable workflow because it is a whole job with its own runner
+ and its own `permissions:` block instead of "reuseable workflow"
