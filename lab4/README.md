@@ -53,3 +53,17 @@ the install has to reinstall everything again, hence the significantly longer ti
 .dockerignore lists the files Docker should not send to the build. The bullet names the files that 
 are to be skipped.
 
+| Step | Baseline | Cache miss | Cache hit | Worth it? |
+|------|----------|------------|-----------|-----------|
+| pip install (test, py3.12) | 5s | 2s | 2s | no |
+| docker build (build job) | 7s | 20s | 11s | no |
+| Whole workflow (wall clock) | 56s | 81s | 76s | no |
+
+
+pip cache: it is not worth it because the miss and hit runs both take 2 seconds, no nothing
+of measure is saved. The 5 second baseline as well is negligable because there is no cache involved
+
+
+Docker layer cache: Not worth either. The plain took 7 seconds while the hit was 11 seconds 
+and 10 seconds for the buildx, therefore the cache import and export overhead are outweighed by 
+the small pip layer it reuses
