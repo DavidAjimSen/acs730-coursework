@@ -1,0 +1,8 @@
+@all:
+  |--@ungrouped:
+  |--@aws_ec2:
+  |  |--i-04e6f2a3bcd96cf63
+  |  |--i-09704d0218d18e705
+  |--@role_web:
+  |  |--i-04e6f2a3bcd96cf63
+  |  |--i-09704d0218d18e705
