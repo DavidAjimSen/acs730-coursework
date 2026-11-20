@@ -1,0 +1,59 @@
+
+[0m[1m[32mNo changes.[0m[1m No objects need to be destroyed.[0m
+
+[0mEither you have not created any objects yet or the existing objects were
+already deleted outside of Terraform.
+[0m[1m[32m
+Destroy complete! Resources: 0 destroyed.
+[0msnapshot behind the AMI: snap-0dc6c3f261e7b4841
+{
+    "Return": true,
+    "DeleteSnapshotResults": []
+}
+remove_bucket: acs730-lab6-ssm-656614606275
+
+== EC2 instances
+   i-0b2b5ea290ff6b25c  running  t3.micro  acs730-lab6-web-1
+      -> aws ec2 terminate-instances --instance-ids i-0b2b5ea290ff6b25c
+   i-0a51bb5b0d265f7e7  running  t3.micro  acs730-lab6-web-0
+      -> aws ec2 terminate-instances --instance-ids i-0a51bb5b0d265f7e7
+   i-05deca58ed771fd79  running  t3.medium  acs730-workstation   (your workstation -- keep this)
+   i-0c9acb3787338fe58  running  t3.micro  Vm1
+      -> aws ec2 terminate-instances --instance-ids i-0c9acb3787338fe58
+   i-039a462db2a8d8070  running  t3.micro  VM2
+      -> aws ec2 terminate-instances --instance-ids i-039a462db2a8d8070
+
+== Your AMIs (and their snapshots)
+
+== Unattached EBS volumes
+
+== Snapshots you own
+
+== Non-default security groups
+   sg-0499eb8c85d365c81  week9
+      -> aws ec2 delete-security-group --group-id sg-0499eb8c85d365c81
+   sg-04dcf5d05fdb14643  efs-sg-2
+      -> aws ec2 delete-security-group --group-id sg-04dcf5d05fdb14643
+   sg-056d49bd0342896b4  launch-wizard-1
+      -> aws ec2 delete-security-group --group-id sg-056d49bd0342896b4
+   sg-0bbbfa894ce128c4f  efs-sg-1
+      -> aws ec2 delete-security-group --group-id sg-0bbbfa894ce128c4f
+   sg-081ed064c677bc579  instance-sg-3
+      -> aws ec2 delete-security-group --group-id sg-081ed064c677bc579
+   sg-0e0f97522acbbd93f  instance-sg-4
+      -> aws ec2 delete-security-group --group-id sg-0e0f97522acbbd93f
+   sg-0d15c1573dfcfa70c  efs-sg-4
+      -> aws ec2 delete-security-group --group-id sg-0d15c1573dfcfa70c
+   sg-034337ce0f099f0aa  instance-sg-2
+      -> aws ec2 delete-security-group --group-id sg-034337ce0f099f0aa
+   sg-042f3b51da4866211  efs-sg-3
+      -> aws ec2 delete-security-group --group-id sg-042f3b51da4866211
+   sg-05ac478489853e85d  instance-sg-1
+      -> aws ec2 delete-security-group --group-id sg-05ac478489853e85d
+   sg-029d4b19daa2dde2d  acs730-lab6-sg
+      -> aws ec2 delete-security-group --group-id sg-029d4b19daa2dde2d
+
+== Terraform state files that still track resources
+
+Review the items above. This script deleted nothing.
+
